@@ -12,6 +12,8 @@ using System.Security.Policy;
 using System.Transactions;
 using System.Windows.Forms;
 using System;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
+using System.Reflection.Emit;
 
 namespace Editor
 {
@@ -656,6 +658,82 @@ namespace Editor
         {
             startNewSearch();
             searchATextInside();
+        }
+
+
+
+        //resize operations
+        public int pointx = 0;
+
+        public bool setPointsX(int x)
+        {
+            pointx = x;
+            return true;
+        }
+
+        public int pointy = 0;
+
+        public bool setPointsY(int y)
+        {
+            pointy = y;
+            return true;
+        }
+
+        public bool resizeTheWindowUp()
+        {
+            int w = textBox1.Width;
+            int h = textBox1.Height;
+
+
+            int difw = pointx - textBox1.Left;
+            int difh = pointy - textBox1.Top;
+
+
+
+            this.textBox1.Width = difw;
+            this.textBox1.Height = difh;
+
+
+            w = textBox1.Width;
+            h = textBox1.Height;
+
+            repositionAllLowerControls();
+
+            return true;
+        }
+
+        public bool repositionAllLowerControls()
+        {
+
+            label1.Top = corner1.Top + 10;
+            label2.Top = corner1.Top + 10 +15;
+            label3.Top = corner1.Top + 10 + 30;
+
+
+            lblFont.Top = corner1.Top + 10;
+            lblSize.Top = corner1.Top + 10 +15;
+            lblwordwrap.Top = corner1.Top + 10 + 30;
+
+            button13.Top = corner1.Top + 10 + 15;
+            button20.Top = corner1.Top + 10 + 15;
+
+            label4.Top = corner1.Top + 10 + 15 ;
+            label10.Top = corner1.Top + 10 + 30 ;
+
+            lblFileName.Top = corner1.Top + 10 + 15;
+
+            label7.Top = corner1.Top + 10;
+            lblfindedtext.Top = corner1.Top + 10 + 15;
+
+            button21.Top = corner1.Top + 10;
+            lblDateTime.Top = corner1.Top + 10;
+
+
+            return true;
+        }
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

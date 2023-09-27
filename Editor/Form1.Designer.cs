@@ -91,6 +91,7 @@
             button22 = new Button();
             label21 = new Label();
             button23 = new Button();
+            corner1 = new corner();
             SuspendLayout();
             // 
             // textBox1
@@ -679,12 +680,22 @@
             button23.UseVisualStyleBackColor = true;
             button23.Click += button23_Click;
             // 
+            // corner1
+            // 
+            corner1.BackColor = Color.Red;
+            corner1.Location = new Point(1140, 511);
+            corner1.Margin = new Padding(3, 2, 3, 2);
+            corner1.Name = "corner1";
+            corner1.Size = new Size(6, 6);
+            corner1.TabIndex = 60;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1156, 578);
+            ClientSize = new Size(1156, 652);
+            Controls.Add(corner1);
             Controls.Add(button23);
             Controls.Add(label21);
             Controls.Add(button22);
@@ -748,6 +759,7 @@
             FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             Shown += Form1_Shown;
+            SizeChanged += Form1_SizeChanged;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -816,5 +828,6 @@
         private Button button22;
         private Label label21;
         private Button button23;
+        private corner corner1;
     }
 }
