@@ -1,0 +1,12 @@
+
+
+listadepozitii
+
+cauta in text un string
+
+gaseste toate pozitiile si depunele in listadepozitii
+
+sari in lista de pozitii cu nextbutton
+
+daca face o noua cautare atunci reia de la zero 
+reseteaza totul
