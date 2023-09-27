@@ -97,6 +97,12 @@
             label27 = new Label();
             button25 = new Button();
             lblcounterofspaces = new Label();
+            lblNewLineChars = new Label();
+            label29 = new Label();
+            button26 = new Button();
+            lblAllChars = new Label();
+            label30 = new Label();
+            button27 = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -746,12 +752,80 @@
             lblcounterofspaces.TabIndex = 65;
             lblcounterofspaces.Text = "0";
             // 
+            // lblNewLineChars
+            // 
+            lblNewLineChars.AutoSize = true;
+            lblNewLineChars.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNewLineChars.Location = new Point(541, 53);
+            lblNewLineChars.Name = "lblNewLineChars";
+            lblNewLineChars.Size = new Size(15, 15);
+            lblNewLineChars.TabIndex = 68;
+            lblNewLineChars.Text = "0";
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label29.Location = new Point(401, 53);
+            label29.Name = "label29";
+            label29.Size = new Size(74, 15);
+            label29.TabIndex = 67;
+            label29.Text = "NEW LINES";
+            // 
+            // button26
+            // 
+            button26.Location = new Point(508, 45);
+            button26.Margin = new Padding(3, 2, 3, 2);
+            button26.Name = "button26";
+            button26.Size = new Size(27, 23);
+            button26.TabIndex = 66;
+            button26.Text = "N";
+            button26.UseVisualStyleBackColor = true;
+            button26.Click += button26_Click;
+            // 
+            // lblAllChars
+            // 
+            lblAllChars.AutoSize = true;
+            lblAllChars.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAllChars.Location = new Point(734, 53);
+            lblAllChars.Name = "lblAllChars";
+            lblAllChars.Size = new Size(15, 15);
+            lblAllChars.TabIndex = 71;
+            lblAllChars.Text = "0";
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label30.Location = new Point(594, 53);
+            label30.Name = "label30";
+            label30.Size = new Size(72, 15);
+            label30.TabIndex = 70;
+            label30.Text = "ALL CHARS";
+            // 
+            // button27
+            // 
+            button27.Location = new Point(701, 45);
+            button27.Margin = new Padding(3, 2, 3, 2);
+            button27.Name = "button27";
+            button27.Size = new Size(27, 23);
+            button27.TabIndex = 69;
+            button27.Text = "C";
+            button27.UseVisualStyleBackColor = true;
+            button27.Click += button27_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1251, 652);
+            Controls.Add(lblAllChars);
+            Controls.Add(label30);
+            Controls.Add(button27);
+            Controls.Add(lblNewLineChars);
+            Controls.Add(label29);
+            Controls.Add(button26);
             Controls.Add(lblcounterofspaces);
             Controls.Add(label27);
             Controls.Add(button25);
@@ -896,5 +970,11 @@
         private Label label27;
         private Button button25;
         private Label lblcounterofspaces;
+        private Label lblNewLineChars;
+        private Label label29;
+        private Button button26;
+        private Label lblAllChars;
+        private Label label30;
+        private Button button27;
     }
 }

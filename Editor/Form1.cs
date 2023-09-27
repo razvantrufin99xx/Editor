@@ -514,19 +514,6 @@ namespace Editor
 
         }
 
-        //text operations
-
-        public int countSpaces()
-        {
-            int c = 0;
-
-            for (int i = 0; i < textBox1.Text.Length; i++)
-            {
-                if (textBox1.Text[i] == ' ') { c++; }
-            }
-
-            return c;
-        }
 
 
 
@@ -764,7 +751,22 @@ namespace Editor
         }
 
 
+        //text operations
+
+
         //count spaces
+        public int countSpaces()
+        {
+            int c = 0;
+
+            for (int i = 0; i < textBox1.Text.Length; i++)
+            {
+                if (textBox1.Text[i] == ' ') { c++; }
+            }
+
+            return c;
+        }
+
         public bool setLabellblCountSpaces()
         {
             this.lblcounterofspaces.Text = countSpaces().ToString();
@@ -773,6 +775,55 @@ namespace Editor
         private void button25_Click(object sender, EventArgs e)
         {
             setLabellblCountSpaces();
+        }
+
+
+        //new lines
+
+        public int countNewLineChars()
+        {
+            int nl = 0;
+            string x = "\r\n"; //size is 2
+            int l = x.Length;
+
+            for (int i = 0; i < textBox1.Text.Length - l; i++)
+            {
+                if (textBox1.Text.Substring(i, l) == x)
+                {
+                    nl++;
+                }
+            }
+            return nl;
+
+        }
+        public bool setLabellblNewLineChars()
+        {
+            this.lblNewLineChars.Text = countNewLineChars().ToString();
+            return true;
+        }
+        private void button26_Click(object sender, EventArgs e)
+        {
+            setLabellblNewLineChars();
+        }
+
+
+        //all chars
+
+        public int countAllchars()
+        {
+
+            return textBox1.Text.Length;
+
+        }
+        public bool setLabellblAllChars()
+        {
+            this.lblAllChars.Text = countAllchars().ToString();
+            return true;
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            setLabellblAllChars();
         }
     }
 }
