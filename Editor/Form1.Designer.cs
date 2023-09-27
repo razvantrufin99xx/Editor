@@ -92,17 +92,22 @@
             label21 = new Label();
             button23 = new Button();
             corner1 = new corner();
+            label24 = new Label();
+            button24 = new Button();
+            label27 = new Label();
+            button25 = new Button();
+            lblcounterofspaces = new Label();
             SuspendLayout();
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Microsoft Yi Baiti", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(11, 55);
+            textBox1.Location = new Point(11, 93);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ScrollBars = ScrollBars.Both;
-            textBox1.Size = new Size(1130, 456);
+            textBox1.Size = new Size(1130, 418);
             textBox1.TabIndex = 0;
             textBox1.WordWrap = false;
             textBox1.TextChanged += textBox1_TextChanged;
@@ -689,12 +694,69 @@
             corner1.Size = new Size(6, 6);
             corner1.TabIndex = 60;
             // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label24.Location = new Point(1147, 28);
+            label24.Name = "label24";
+            label24.Size = new Size(52, 15);
+            label24.TabIndex = 62;
+            label24.Text = "SPLASH";
+            // 
+            // button24
+            // 
+            button24.Location = new Point(1156, 5);
+            button24.Margin = new Padding(3, 2, 3, 2);
+            button24.Name = "button24";
+            button24.Size = new Size(27, 23);
+            button24.TabIndex = 61;
+            button24.Text = "SS";
+            button24.UseVisualStyleBackColor = true;
+            button24.Click += button24_Click;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label27.Location = new Point(200, 53);
+            label27.Name = "label27";
+            label27.Size = new Size(101, 15);
+            label27.TabIndex = 64;
+            label27.Text = "COUNT SPACES";
+            // 
+            // button25
+            // 
+            button25.Location = new Point(307, 45);
+            button25.Margin = new Padding(3, 2, 3, 2);
+            button25.Name = "button25";
+            button25.Size = new Size(27, 23);
+            button25.TabIndex = 63;
+            button25.Text = "S";
+            button25.UseVisualStyleBackColor = true;
+            button25.Click += button25_Click;
+            // 
+            // lblcounterofspaces
+            // 
+            lblcounterofspaces.AutoSize = true;
+            lblcounterofspaces.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblcounterofspaces.Location = new Point(340, 53);
+            lblcounterofspaces.Name = "lblcounterofspaces";
+            lblcounterofspaces.Size = new Size(15, 15);
+            lblcounterofspaces.TabIndex = 65;
+            lblcounterofspaces.Text = "0";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1156, 652);
+            ClientSize = new Size(1251, 652);
+            Controls.Add(lblcounterofspaces);
+            Controls.Add(label27);
+            Controls.Add(button25);
+            Controls.Add(label24);
+            Controls.Add(button24);
             Controls.Add(corner1);
             Controls.Add(button23);
             Controls.Add(label21);
@@ -829,5 +891,10 @@
         private Label label21;
         private Button button23;
         private corner corner1;
+        private Label label24;
+        private Button button24;
+        private Label label27;
+        private Button button25;
+        private Label lblcounterofspaces;
     }
 }

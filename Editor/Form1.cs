@@ -44,8 +44,16 @@ namespace Editor
             setLabelFileName();
             return true;
         }
+        public bool showsplashform()
+        {
+            splashform s = new splashform();
+            s.Show();
+            s.Focus();
+            return true;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
+
             reload();
         }
 
@@ -448,6 +456,7 @@ namespace Editor
         private void Form1_Shown(object sender, EventArgs e)
         {
             formShown();
+            showsplashform();
         }
 
 
@@ -505,6 +514,19 @@ namespace Editor
 
         }
 
+        //text operations
+
+        public int countSpaces()
+        {
+            int c = 0;
+
+            for (int i = 0; i < textBox1.Text.Length; i++)
+            {
+                if (textBox1.Text[i] == ' ') { c++; }
+            }
+
+            return c;
+        }
 
 
 
@@ -706,19 +728,19 @@ namespace Editor
         {
 
             label1.Top = corner1.Top + 10;
-            label2.Top = corner1.Top + 10 +15;
+            label2.Top = corner1.Top + 10 + 15;
             label3.Top = corner1.Top + 10 + 30;
 
 
             lblFont.Top = corner1.Top + 10;
-            lblSize.Top = corner1.Top + 10 +15;
+            lblSize.Top = corner1.Top + 10 + 15;
             lblwordwrap.Top = corner1.Top + 10 + 30;
 
             button13.Top = corner1.Top + 10 + 15;
             button20.Top = corner1.Top + 10 + 15;
 
-            label4.Top = corner1.Top + 10 + 15 ;
-            label10.Top = corner1.Top + 10 + 30 ;
+            label4.Top = corner1.Top + 10 + 15;
+            label10.Top = corner1.Top + 10 + 30;
 
             lblFileName.Top = corner1.Top + 10 + 15;
 
@@ -734,6 +756,23 @@ namespace Editor
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            showsplashform();
+        }
+
+
+        //count spaces
+        public bool setLabellblCountSpaces()
+        {
+            this.lblcounterofspaces.Text = countSpaces().ToString();
+            return true;
+        }
+        private void button25_Click(object sender, EventArgs e)
+        {
+            setLabellblCountSpaces();
         }
     }
 }
