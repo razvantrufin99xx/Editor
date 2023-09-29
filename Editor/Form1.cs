@@ -51,10 +51,18 @@ namespace Editor
             s.Focus();
             return true;
         }
+
+        public bool setFormSizeMaximum()
+        {
+            WindowState = FormWindowState.Maximized;
+            return true;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
             reload();
+            setFormSizeMaximum();
+
         }
 
 
@@ -824,6 +832,87 @@ namespace Editor
         private void button27_Click(object sender, EventArgs e)
         {
             setLabellblAllChars();
+        }
+
+
+
+        //theme
+        public int currentTheme = 0;
+
+        public Color defback = Control.DefaultBackColor;
+        public Color defore = Color.Black;
+
+        public Color prevback = Control.DefaultBackColor;
+        public Color prevfore = Color.Black;
+
+        public bool setPrevBackColor(Color pbc)
+        {
+            this.prevback = pbc;
+            return true;
+        }
+        public bool setPrevForeColor(Color pfc)
+        {
+            this.prevfore = pfc;
+            return true;
+        }
+
+        public bool setBackGroundColorOfForm(Color pcolor)
+        {
+            this.BackColor = pcolor;
+            return true;
+        }
+
+        public bool setForeGroundColorOfFormText(Color pcolor)
+        {
+            this.ForeColor = pcolor;
+            return true;
+        }
+
+        public bool setTheTheme(Color back, Color fore)
+        {
+            setPrevBackColor(this.BackColor);
+            setPrevForeColor(this.ForeColor);
+
+            setBackGroundColorOfForm(back);
+            setForeGroundColorOfFormText(fore);
+
+            return true;
+        }
+        public bool setTheTheme()
+        {
+            if (currentTheme == 0)
+            {
+                setTheTheme(Color.DarkBlue, Color.White);
+                currentTheme++;
+                return true;
+
+            }
+           else if (currentTheme == 1)
+            {
+                setTheTheme(Color.White, Color.Black);
+                currentTheme++;
+                return true;
+
+            }
+            else if (currentTheme == 2)
+            {
+                setTheTheme(Color.Black, Color.White);
+                currentTheme++;
+                return true;
+
+            }
+            if (currentTheme == 3) {
+                currentTheme = 0;
+                setTheTheme(this.defback, this.defore);
+                currentTheme++;
+                return true;
+            }
+
+            return true;
+        }
+        private void button28_Click(object sender, EventArgs e)
+        {
+            setTheTheme();
         }
     }
 }

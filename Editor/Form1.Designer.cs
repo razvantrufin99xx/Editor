@@ -103,6 +103,8 @@
             lblAllChars = new Label();
             label30 = new Label();
             button27 = new Button();
+            label28 = new Label();
+            button28 = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -814,12 +816,35 @@
             button27.UseVisualStyleBackColor = true;
             button27.Click += button27_Click;
             // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label28.Location = new Point(1203, 27);
+            label28.Name = "label28";
+            label28.Size = new Size(47, 15);
+            label28.TabIndex = 73;
+            label28.Text = "THEME";
+            // 
+            // button28
+            // 
+            button28.Location = new Point(1212, 4);
+            button28.Margin = new Padding(3, 2, 3, 2);
+            button28.Name = "button28";
+            button28.Size = new Size(27, 23);
+            button28.TabIndex = 72;
+            button28.Text = "T";
+            button28.UseVisualStyleBackColor = true;
+            button28.Click += button28_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1251, 652);
+            Controls.Add(label28);
+            Controls.Add(button28);
             Controls.Add(lblAllChars);
             Controls.Add(label30);
             Controls.Add(button27);
@@ -976,5 +1001,7 @@
         private Label lblAllChars;
         private Label label30;
         private Button button27;
+        private Label label28;
+        private Button button28;
     }
 }
