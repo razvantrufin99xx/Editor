@@ -837,8 +837,52 @@ namespace Editor
 
 
         //theme
-        public int currentTheme = 0;
 
+        
+       
+
+        
+           
+       public class themes
+        {
+            public List<Color> themeColors = new List<Color>();
+            public themes(List<Color> clist)
+            {
+                themeColors.Add(clist[0]);
+                themeColors.Add(clist[1]);
+                themeColors.Add(clist[2]);
+                themeColors.Add(clist[3]);
+
+            }
+        }
+        
+        public List<themes> thelistofthemes = new List<themes>();
+       
+        public bool addNewtheme(Color bkfrm, Color ffrm, Color bktxt, Color ftxt)
+        {
+            List<Color> x = new List<Color>();
+            x[0] = bkfrm;
+            x[1] = ffrm;
+            x[2] = bktxt;
+            x[3] = ftxt;
+
+            thelistofthemes.Add(new themes(x));
+
+
+            return true;
+        }
+        public bool addStandardColorsThemes()
+        {
+
+            //white and red
+            addNewtheme(Color.Red,Color.White,Color.Red,Color.White);
+
+
+            return true;
+        }
+
+        public int currentTheme = 0;
+        public int lastthemeindex = 3;
         public Color defback = Control.DefaultBackColor;
         public Color defore = Color.Black;
 
@@ -867,6 +911,19 @@ namespace Editor
             this.ForeColor = pcolor;
             return true;
         }
+
+        public bool setBackGroundColorOfText(Color pcolor)
+        {
+            this.textBox1.BackColor = pcolor;
+            return true;
+        }
+
+        public bool setForeGroundColorOfText(Color pcolor)
+        {
+            this.textBox1.ForeColor = pcolor;
+            return true;
+        }
+
 
         public bool setTheTheme(Color back, Color fore)
         {
@@ -901,7 +958,7 @@ namespace Editor
                 return true;
 
             }
-            if (currentTheme == 3) {
+            if (currentTheme == lastthemeindex) {
                 currentTheme = 0;
                 setTheTheme(this.defback, this.defore);
                 currentTheme++;
@@ -914,5 +971,39 @@ namespace Editor
         {
             setTheTheme();
         }
+
+
+        //list of operations for textbox1
+        public class element
+        {
+            public string val;
+            public int positionx;
+            public int positiony;
+            public string info;
+            public element(string pval, int pposx, int pposy, string pi)
+            {
+                this.val = pval;
+                this.positionx = pposx;
+                this.positiony = pposy;
+                this.info = pi;
+            }
+
+        }
+
+        public List<element> elements = new List<element>();
+
+        public bool addElement(element e)
+        {
+            elements.Add(e);
+            return true;
+        }
+       
+       
+
+
+        //
+
+
+
     }
 }
