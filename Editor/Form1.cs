@@ -1052,7 +1052,7 @@ namespace Editor
             setForegroundColor(thelistofthemes[indexoftheme].themeColors[3]);
             currentTheme++;
             return true;
-            return true;
+            
         }
         private void button28_Click(object sender, EventArgs e)
         {
