@@ -150,10 +150,10 @@ namespace Editor
         //background 
         public bool setBackgroundColor(Color c)
         {
-           
-                this.BackGroundColor = c;
-                textBox1.BackColor = BackGroundColor;
-           
+
+            this.BackGroundColor = c;
+            textBox1.BackColor = BackGroundColor;
+
             return true;
         }
         public bool setBackgroundColor()
@@ -173,10 +173,10 @@ namespace Editor
         //text color foreground
         public bool setForegroundColor(Color c)
         {
-           
-                this.ForeGroundColor = c;
-                textBox1.ForeColor = ForeGroundColor;
-            
+
+            this.ForeGroundColor = c;
+            textBox1.ForeColor = ForeGroundColor;
+
             return true;
         }
         public bool setForegroundColor()
@@ -853,14 +853,85 @@ namespace Editor
 
 
 
+        //alL DIGITS
+
+        public int countAllDIGITS()
+        {
+
+            int digitscounter = 0;
+            string x = "0123456789";
+
+
+            for (int i = 0; i < textBox1.Text.Length; i++)
+            {
+                if (textBox1.Text.Substring(i, 1) == x.Substring(1, 1))
+                {
+                    digitscounter++;
+                }
+                if (textBox1.Text.Substring(i, 1) == x.Substring(2, 1))
+                {
+                    digitscounter++;
+                }
+                if (textBox1.Text.Substring(i, 1) == x.Substring(3, 1))
+                {
+                    digitscounter++;
+                }
+                if (textBox1.Text.Substring(i, 1) == x.Substring(4, 1))
+                {
+                    digitscounter++;
+                }
+                if (textBox1.Text.Substring(i, 1) == x.Substring(5, 1))
+                {
+                    digitscounter++;
+                }
+                if (textBox1.Text.Substring(i, 1) == x.Substring(6, 1))
+                {
+                    digitscounter++;
+                }
+                if (textBox1.Text.Substring(i, 1) == x.Substring(7, 1))
+                {
+                    digitscounter++;
+                }
+                if (textBox1.Text.Substring(i, 1) == x.Substring(8, 1))
+                {
+                    digitscounter++;
+                }
+                if (textBox1.Text.Substring(i, 1) == x.Substring(9, 1))
+                {
+                    digitscounter++;
+                }
+                if (textBox1.Text.Substring(i, 1) == x.Substring(0, 1))
+                {
+                    digitscounter++;
+                }
+
+            }
+            return digitscounter;
+
+        }
+        public bool setLabellblAllDigits()
+        {
+            this.lblAlldigits.Text = countAllDIGITS().ToString();
+
+          
+            return true;
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            setLabellblAllDigits();
+        }
+
+
+
         //theme
 
-        
-       
 
-        
-           
-       public class themes
+
+
+
+
+        public class themes
         {
             public List<Color> themeColors = new List<Color>();
             public themes(List<Color> clist)
@@ -872,9 +943,9 @@ namespace Editor
 
             }
         }
-        
+
         public List<themes> thelistofthemes = new List<themes>();
-       
+
         public bool addNewtheme(Color bkfrm, Color ffrm, Color bktxt, Color ftxt)
         {
             List<Color> x = new List<Color>();
@@ -892,13 +963,13 @@ namespace Editor
         {
 
             //white and red
-            addNewtheme(Color.Red,Color.White,Color.Red,Color.White);
+            addNewtheme(Color.Red, Color.White, Color.Red, Color.White);
             addNewtheme(Color.Red, Color.Black, Color.Red, Color.Black);
             addNewtheme(Color.Black, Color.White, Color.Black, Color.White);
             addNewtheme(Color.Black, Color.Red, Color.Black, Color.Red);
             addNewtheme(Color.DarkBlue, Color.White, Color.DarkBlue, Color.White);
             addNewtheme(Color.DarkBlue, Color.Yellow, Color.DarkBlue, Color.Yellow);
-        
+
 
 
 
@@ -906,7 +977,7 @@ namespace Editor
         }
 
         public int currentTheme = 0;
-        public int lastthemeindex =9;
+        public int lastthemeindex = 9;
         public Color defback = Control.DefaultBackColor;
         public Color defore = Color.Black;
 
@@ -968,7 +1039,7 @@ namespace Editor
                 return true;
 
             }
-           else if (currentTheme == 1)
+            else if (currentTheme == 1)
             {
                 setTheTheme(Color.White, Color.Black);
                 currentTheme++;
@@ -994,7 +1065,7 @@ namespace Editor
             {
                 setTheTheme(thelistofthemes[1].themeColors[0], thelistofthemes[1].themeColors[1]);
                 setBackgroundColor(thelistofthemes[1].themeColors[2]);
-                setForegroundColor(thelistofthemes[1].themeColors[3]);  
+                setForegroundColor(thelistofthemes[1].themeColors[3]);
                 currentTheme++;
                 return true;
 
@@ -1035,7 +1106,8 @@ namespace Editor
                 return true;
 
             }
-            if (currentTheme == lastthemeindex) {
+            if (currentTheme == lastthemeindex)
+            {
                 currentTheme = 0;
                 setTheTheme(this.defback, this.defore);
                 currentTheme++;
@@ -1052,7 +1124,7 @@ namespace Editor
             setForegroundColor(thelistofthemes[indexoftheme].themeColors[3]);
             currentTheme++;
             return true;
-            
+
         }
         private void button28_Click(object sender, EventArgs e)
         {
@@ -1084,8 +1156,9 @@ namespace Editor
             elements.Add(e);
             return true;
         }
-       
-       
+
+
+
 
 
         //

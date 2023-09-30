@@ -105,6 +105,9 @@
             button27 = new Button();
             label28 = new Label();
             button28 = new Button();
+            lblAlldigits = new Label();
+            lbldigits = new Label();
+            button29 = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -727,7 +730,7 @@
             // 
             label27.AutoSize = true;
             label27.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label27.Location = new Point(200, 53);
+            label27.Location = new Point(11, 53);
             label27.Name = "label27";
             label27.Size = new Size(101, 15);
             label27.TabIndex = 64;
@@ -735,10 +738,10 @@
             // 
             // button25
             // 
-            button25.Location = new Point(307, 45);
+            button25.Location = new Point(115, 53);
             button25.Margin = new Padding(3, 2, 3, 2);
             button25.Name = "button25";
-            button25.Size = new Size(27, 23);
+            button25.Size = new Size(26, 23);
             button25.TabIndex = 63;
             button25.Text = "S";
             button25.UseVisualStyleBackColor = true;
@@ -748,7 +751,7 @@
             // 
             lblcounterofspaces.AutoSize = true;
             lblcounterofspaces.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblcounterofspaces.Location = new Point(340, 53);
+            lblcounterofspaces.Location = new Point(94, 74);
             lblcounterofspaces.Name = "lblcounterofspaces";
             lblcounterofspaces.Size = new Size(15, 15);
             lblcounterofspaces.TabIndex = 65;
@@ -758,7 +761,7 @@
             // 
             lblNewLineChars.AutoSize = true;
             lblNewLineChars.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNewLineChars.Location = new Point(541, 53);
+            lblNewLineChars.Location = new Point(210, 74);
             lblNewLineChars.Name = "lblNewLineChars";
             lblNewLineChars.Size = new Size(15, 15);
             lblNewLineChars.TabIndex = 68;
@@ -768,7 +771,7 @@
             // 
             label29.AutoSize = true;
             label29.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label29.Location = new Point(401, 53);
+            label29.Location = new Point(157, 53);
             label29.Name = "label29";
             label29.Size = new Size(74, 15);
             label29.TabIndex = 67;
@@ -776,7 +779,7 @@
             // 
             // button26
             // 
-            button26.Location = new Point(508, 45);
+            button26.Location = new Point(231, 53);
             button26.Margin = new Padding(3, 2, 3, 2);
             button26.Name = "button26";
             button26.Size = new Size(27, 23);
@@ -789,7 +792,7 @@
             // 
             lblAllChars.AutoSize = true;
             lblAllChars.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAllChars.Location = new Point(734, 53);
+            lblAllChars.Location = new Point(319, 76);
             lblAllChars.Name = "lblAllChars";
             lblAllChars.Size = new Size(15, 15);
             lblAllChars.TabIndex = 71;
@@ -799,7 +802,7 @@
             // 
             label30.AutoSize = true;
             label30.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label30.Location = new Point(594, 53);
+            label30.Location = new Point(264, 53);
             label30.Name = "label30";
             label30.Size = new Size(72, 15);
             label30.TabIndex = 70;
@@ -807,7 +810,7 @@
             // 
             // button27
             // 
-            button27.Location = new Point(701, 45);
+            button27.Location = new Point(342, 53);
             button27.Margin = new Padding(3, 2, 3, 2);
             button27.Name = "button27";
             button27.Size = new Size(27, 23);
@@ -837,12 +840,46 @@
             button28.UseVisualStyleBackColor = true;
             button28.Click += button28_Click;
             // 
+            // lblAlldigits
+            // 
+            lblAlldigits.AutoSize = true;
+            lblAlldigits.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAlldigits.Location = new Point(434, 76);
+            lblAlldigits.Name = "lblAlldigits";
+            lblAlldigits.Size = new Size(15, 15);
+            lblAlldigits.TabIndex = 76;
+            lblAlldigits.Text = "0";
+            // 
+            // lbldigits
+            // 
+            lbldigits.AutoSize = true;
+            lbldigits.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lbldigits.Location = new Point(379, 53);
+            lbldigits.Name = "lbldigits";
+            lbldigits.Size = new Size(45, 15);
+            lbldigits.TabIndex = 75;
+            lbldigits.Text = "DIGITS";
+            // 
+            // button29
+            // 
+            button29.Location = new Point(457, 53);
+            button29.Margin = new Padding(3, 2, 3, 2);
+            button29.Name = "button29";
+            button29.Size = new Size(27, 23);
+            button29.TabIndex = 74;
+            button29.Text = "D";
+            button29.UseVisualStyleBackColor = true;
+            button29.Click += button29_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1251, 652);
+            Controls.Add(lblAlldigits);
+            Controls.Add(lbldigits);
+            Controls.Add(button29);
             Controls.Add(label28);
             Controls.Add(button28);
             Controls.Add(lblAllChars);
@@ -1003,5 +1040,8 @@
         private Button button27;
         private Label label28;
         private Button button28;
+        private Label lblAlldigits;
+        private Label lbldigits;
+        private Button button29;
     }
 }
