@@ -42,6 +42,7 @@ namespace Editor
             refresh();
             setLabelWordWrap();
             setLabelFileName();
+            addStandardColorsThemes();
             return true;
         }
         public bool showsplashform()
@@ -861,10 +862,10 @@ namespace Editor
         public bool addNewtheme(Color bkfrm, Color ffrm, Color bktxt, Color ftxt)
         {
             List<Color> x = new List<Color>();
-            x[0] = bkfrm;
-            x[1] = ffrm;
-            x[2] = bktxt;
-            x[3] = ftxt;
+            x.Add(bkfrm);
+            x.Add(ffrm);
+            x.Add(bktxt);
+            x.Add(ftxt);
 
             thelistofthemes.Add(new themes(x));
 
@@ -876,13 +877,20 @@ namespace Editor
 
             //white and red
             addNewtheme(Color.Red,Color.White,Color.Red,Color.White);
+            addNewtheme(Color.Red, Color.Black, Color.Red, Color.Black);
+            addNewtheme(Color.Black, Color.White, Color.Black, Color.White);
+            addNewtheme(Color.Black, Color.Red, Color.Black, Color.Red);
+            addNewtheme(Color.DarkBlue, Color.White, Color.DarkBlue, Color.White);
+            addNewtheme(Color.DarkBlue, Color.Yellow, Color.DarkBlue, Color.Yellow);
+        
+
 
 
             return true;
         }
 
         public int currentTheme = 0;
-        public int lastthemeindex = 3;
+        public int lastthemeindex =9;
         public Color defback = Control.DefaultBackColor;
         public Color defore = Color.Black;
 
@@ -954,6 +962,54 @@ namespace Editor
             else if (currentTheme == 2)
             {
                 setTheTheme(Color.Black, Color.White);
+                currentTheme++;
+                return true;
+
+            }
+            else if (currentTheme == 3)
+            {
+                setTheTheme(thelistofthemes[0].themeColors[0], thelistofthemes[0].themeColors[1]);
+
+                currentTheme++;
+                return true;
+
+            }
+            else if (currentTheme == 4)
+            {
+                setTheTheme(thelistofthemes[1].themeColors[0], thelistofthemes[0].themeColors[1]);
+
+                currentTheme++;
+                return true;
+
+            }
+            else if (currentTheme == 5)
+            {
+                setTheTheme(thelistofthemes[2].themeColors[0], thelistofthemes[0].themeColors[1]);
+
+                currentTheme++;
+                return true;
+
+            }
+            else if (currentTheme == 6)
+            {
+                setTheTheme(thelistofthemes[3].themeColors[0], thelistofthemes[0].themeColors[1]);
+
+                currentTheme++;
+                return true;
+
+            }
+            else if (currentTheme == 7)
+            {
+                setTheTheme(thelistofthemes[4].themeColors[0], thelistofthemes[0].themeColors[1]);
+
+                currentTheme++;
+                return true;
+
+            }
+            else if (currentTheme == 8)
+            {
+                setTheTheme(thelistofthemes[5].themeColors[0], thelistofthemes[0].themeColors[1]);
+
                 currentTheme++;
                 return true;
 
