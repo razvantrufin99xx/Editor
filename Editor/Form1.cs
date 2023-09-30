@@ -148,6 +148,14 @@ namespace Editor
 
         }
         //background 
+        public bool setBackgroundColor(Color c)
+        {
+           
+                this.BackGroundColor = c;
+                textBox1.BackColor = BackGroundColor;
+           
+            return true;
+        }
         public bool setBackgroundColor()
         {
             this.colorDialog1 = new ColorDialog();
@@ -163,6 +171,14 @@ namespace Editor
             setBackgroundColor();
         }
         //text color foreground
+        public bool setForegroundColor(Color c)
+        {
+           
+                this.ForeGroundColor = c;
+                textBox1.ForeColor = ForeGroundColor;
+            
+            return true;
+        }
         public bool setForegroundColor()
         {
             this.colorDialog1 = new ColorDialog();
@@ -976,40 +992,45 @@ namespace Editor
             }
             else if (currentTheme == 4)
             {
-                setTheTheme(thelistofthemes[1].themeColors[0], thelistofthemes[0].themeColors[1]);
-
+                setTheTheme(thelistofthemes[1].themeColors[0], thelistofthemes[1].themeColors[1]);
+                setBackgroundColor(thelistofthemes[1].themeColors[2]);
+                setForegroundColor(thelistofthemes[1].themeColors[3]);  
                 currentTheme++;
                 return true;
 
             }
             else if (currentTheme == 5)
             {
-                setTheTheme(thelistofthemes[2].themeColors[0], thelistofthemes[0].themeColors[1]);
-
+                setTheTheme(thelistofthemes[2].themeColors[0], thelistofthemes[2].themeColors[1]);
+                setBackgroundColor(thelistofthemes[2].themeColors[2]);
+                setForegroundColor(thelistofthemes[2].themeColors[3]);
                 currentTheme++;
                 return true;
 
             }
             else if (currentTheme == 6)
             {
-                setTheTheme(thelistofthemes[3].themeColors[0], thelistofthemes[0].themeColors[1]);
-
+                setTheTheme(thelistofthemes[3].themeColors[0], thelistofthemes[3].themeColors[1]);
+                setBackgroundColor(thelistofthemes[3].themeColors[2]);
+                setForegroundColor(thelistofthemes[3].themeColors[3]);
                 currentTheme++;
                 return true;
 
             }
             else if (currentTheme == 7)
             {
-                setTheTheme(thelistofthemes[4].themeColors[0], thelistofthemes[0].themeColors[1]);
-
+                setTheTheme(thelistofthemes[4].themeColors[0], thelistofthemes[4].themeColors[1]);
+                setBackgroundColor(thelistofthemes[4].themeColors[2]);
+                setForegroundColor(thelistofthemes[4].themeColors[3]);
                 currentTheme++;
                 return true;
 
             }
             else if (currentTheme == 8)
             {
-                setTheTheme(thelistofthemes[5].themeColors[0], thelistofthemes[0].themeColors[1]);
-
+                setTheTheme(thelistofthemes[5].themeColors[0], thelistofthemes[5].themeColors[1]);
+                setBackgroundColor(thelistofthemes[5].themeColors[2]);
+                setForegroundColor(thelistofthemes[5].themeColors[3]);
                 currentTheme++;
                 return true;
 
@@ -1021,6 +1042,16 @@ namespace Editor
                 return true;
             }
 
+            return true;
+        }
+
+        public bool setTheThemeFromStandardThemesUsingIndexOfIt(int indexoftheme)
+        {
+            setTheTheme(thelistofthemes[indexoftheme].themeColors[0], thelistofthemes[indexoftheme].themeColors[1]);
+            setBackgroundColor(thelistofthemes[indexoftheme].themeColors[2]);
+            setForegroundColor(thelistofthemes[indexoftheme].themeColors[3]);
+            currentTheme++;
+            return true;
             return true;
         }
         private void button28_Click(object sender, EventArgs e)
