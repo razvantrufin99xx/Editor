@@ -958,19 +958,19 @@ namespace Editor
         public bool findAllSimbols()
         {
             int x = -1;
-            
+
             if (allsimbolsused.Count <= 0) { return false; }
             for (int i = 0; i < textBox1.Text.Length; i++)
             {
                 x = findASimbolInList(textBox1.Text.Substring(i, 1));
                 if (x != -1)
                 {
-                   
-                        allsimbolsused[x].counter++;
-                     try
-                    {}
+
+                    allsimbolsused[x].counter++;
+                    try
+                    { }
                     catch { }
-                    }
+                }
             }
 
             return true;
@@ -1021,6 +1021,115 @@ namespace Editor
             makeStatistics();
             textBox2.Focus();
         }
+
+
+        //positionsofspaces
+        public List<int> spacespositions = new List<int>();
+
+        public bool findPositionsOfAllSpaces()
+        {
+
+
+            for (int i = 0; i < textBox1.Text.Length; i++)
+            {
+                if (textBox1.Text[i] == ' ') { spacespositions.Add(i); }
+            }
+
+            return true;
+        }
+
+        public List<string> wordslist = new List<string>();
+
+        //searchifwordexist
+
+        public bool findAWordInWordList(string s)
+        {
+            for (int i = 0; i < wordslist.Count; i++)
+            {
+                if (wordslist[i] == s) { return true; }
+
+            }
+
+            return false;
+        }
+
+        //find all words between 2 spaces
+        public bool findAllWordsBetween2Spaces()
+        {
+
+
+            for (int i = 0; i < spacespositions.Count; i++)
+            {
+                try
+                {
+                    string s = textBox1.Text.Substring(spacespositions[i], spacespositions[i + 1] - spacespositions[i]);
+
+
+                    if (findAWordInWordList(s) != true)
+                    {
+                        wordslist.Add(s);
+                    }
+                }
+                catch { }
+            }
+
+            return true;
+        }
+
+        //print wordlist to textbox
+        public bool printWordList(ref System.Windows.Forms.TextBox t)
+        {
+            for (int i = 0; i < wordslist.Count; i++)
+            {
+
+                t.Text += wordslist[i] + "\r\n";
+            }
+
+            return true;
+        }
+
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            findPositionsOfAllSpaces();
+            findAllWordsBetween2Spaces();
+            printWordList(ref this.textBox4);
+            setLabellblWordsCounter();
+        }
+
+        // 
+
+
+        public bool setLabellblWordsCounter()
+        {
+            this.lblWordsCounter.Text = wordslist.Count.ToString();
+
+
+            return true;
+        }
+
+
+
+        //positionsofNewLines
+        public List<int> newlinepositions = new List<int>();
+
+        public bool findNewLinePositions()
+        {
+
+            string x = "\r\n"; //size is 2
+            int l = x.Length;
+
+            for (int i = 0; i < textBox1.Text.Length - l; i++)
+            {
+                if (textBox1.Text.Substring(i, l) == x)
+                {
+                    newlinepositions.Add(i);
+                }
+            }
+            return true;
+
+        }
+
 
 
 
@@ -1257,6 +1366,8 @@ namespace Editor
             elements.Add(e);
             return true;
         }
+
+
 
 
 

@@ -111,6 +111,10 @@
             textBox3 = new TextBox();
             button30 = new Button();
             label31 = new Label();
+            label32 = new Label();
+            button31 = new Button();
+            textBox4 = new TextBox();
+            lblWordsCounter = new Label();
             SuspendLayout();
             // 
             // textBox1
@@ -876,7 +880,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(880, 119);
+            textBox3.Location = new Point(389, 112);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(355, 362);
@@ -903,12 +907,55 @@
             label31.TabIndex = 79;
             label31.Text = "Stats";
             // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label32.Location = new Point(636, 53);
+            label32.Name = "label32";
+            label32.Size = new Size(40, 15);
+            label32.TabIndex = 81;
+            label32.Text = "Words";
+            // 
+            // button31
+            // 
+            button31.Location = new Point(684, 53);
+            button31.Margin = new Padding(3, 2, 3, 2);
+            button31.Name = "button31";
+            button31.Size = new Size(27, 23);
+            button31.TabIndex = 80;
+            button31.Text = "W";
+            button31.UseVisualStyleBackColor = true;
+            button31.Click += button31_Click;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(795, 112);
+            textBox4.Multiline = true;
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(355, 362);
+            textBox4.TabIndex = 82;
+            // 
+            // lblWordsCounter
+            // 
+            lblWordsCounter.AutoSize = true;
+            lblWordsCounter.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblWordsCounter.Location = new Point(636, 74);
+            lblWordsCounter.Name = "lblWordsCounter";
+            lblWordsCounter.Size = new Size(15, 15);
+            lblWordsCounter.TabIndex = 83;
+            lblWordsCounter.Text = "0";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1251, 652);
+            Controls.Add(lblWordsCounter);
+            Controls.Add(textBox4);
+            Controls.Add(label32);
+            Controls.Add(button31);
             Controls.Add(label31);
             Controls.Add(button30);
             Controls.Add(textBox3);
@@ -1081,5 +1128,9 @@
         private TextBox textBox3;
         private Button button30;
         private Label label31;
+        private Label label32;
+        private Button button31;
+        private TextBox textBox4;
+        private Label lblWordsCounter;
     }
 }
