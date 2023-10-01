@@ -1017,6 +1017,7 @@ namespace Editor
 
         private void button30_Click(object sender, EventArgs e)
         {
+            allsimbolsused.Clear();
             makeStatistics();
             textBox2.Focus();
         }
