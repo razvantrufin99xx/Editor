@@ -913,7 +913,7 @@ namespace Editor
         {
             this.lblAlldigits.Text = countAllDIGITS().ToString();
 
-          
+
             return true;
         }
 
@@ -921,6 +921,106 @@ namespace Editor
         {
             setLabellblAllDigits();
         }
+
+
+
+        //statistics
+
+        public string allthecharacters = "0123456789abcdefghijklmnopqrstuvxzwyABCDEFGHIJKLMNOPQRSTUVXZWY";
+
+        public List<pairs> allsimbolsused = new List<pairs>();
+
+        public class pairs
+        {
+            public string c = "";
+            public int counter = 0;
+
+            public pairs(string pc, int pcount)
+            {
+                this.c = pc;
+                this.counter = pcount;
+            }
+        }
+
+
+        public int findASimbolInList(string s)
+        {
+            for (int i = 0; i < allsimbolsused.Count; i++)
+            {
+                if (allsimbolsused[i].c == s) { return i; }
+
+            }
+
+            return -1;
+        }
+
+
+        public bool findAllSimbols()
+        {
+            int x = -1;
+            
+            if (allsimbolsused.Count <= 0) { return false; }
+            for (int i = 0; i < textBox1.Text.Length; i++)
+            {
+                x = findASimbolInList(textBox1.Text.Substring(i, 1));
+                if (x != -1)
+                {
+                   
+                        allsimbolsused[x].counter++;
+                     try
+                    {}
+                    catch { }
+                    }
+            }
+
+            return true;
+        }
+
+        public bool addAllSimbolsUsed()
+        {
+            int x = -1;
+            for (int i = 0; i < textBox1.Text.Length; i++)
+            {
+                x = findASimbolInList(textBox1.Text.Substring(i, 1));
+                if (x == -1)
+                {
+                    allsimbolsused.Add(new pairs(textBox1.Text.Substring(i, 1), 0));
+                }
+
+            }
+            return true;
+        }
+
+        public bool printListOfAllSimbols(ref System.Windows.Forms.TextBox t)
+        {
+            for (int i = 0; i < allsimbolsused.Count; i++)
+            {
+                t.Text += allsimbolsused[i].c + " : " + allsimbolsused[i].counter.ToString() + " \r\n";
+
+            }
+
+            return true;
+        }
+
+
+        public bool makeStatistics()
+        {
+
+            addAllSimbolsUsed();
+            findAllSimbols();
+            printListOfAllSimbols(ref textBox3);
+            textBox2.Visible = true;
+            return true;
+        }
+
+
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            makeStatistics();
+            textBox2.Focus();
+        }
+
 
 
 
@@ -1156,6 +1256,8 @@ namespace Editor
             elements.Add(e);
             return true;
         }
+
+
 
 
 

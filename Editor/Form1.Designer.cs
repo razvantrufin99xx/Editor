@@ -108,6 +108,9 @@
             lblAlldigits = new Label();
             lbldigits = new Label();
             button29 = new Button();
+            textBox3 = new TextBox();
+            button30 = new Button();
+            label31 = new Label();
             SuspendLayout();
             // 
             // textBox1
@@ -118,7 +121,7 @@
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ScrollBars = ScrollBars.Both;
-            textBox1.Size = new Size(1130, 418);
+            textBox1.Size = new Size(718, 408);
             textBox1.TabIndex = 0;
             textBox1.WordWrap = false;
             textBox1.TextChanged += textBox1_TextChanged;
@@ -699,7 +702,7 @@
             // corner1
             // 
             corner1.BackColor = Color.Red;
-            corner1.Location = new Point(1140, 511);
+            corner1.Location = new Point(1244, 505);
             corner1.Margin = new Padding(3, 2, 3, 2);
             corner1.Name = "corner1";
             corner1.Size = new Size(6, 6);
@@ -871,12 +874,44 @@
             button29.UseVisualStyleBackColor = true;
             button29.Click += button29_Click;
             // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(880, 119);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(355, 362);
+            textBox3.TabIndex = 77;
+            // 
+            // button30
+            // 
+            button30.Location = new Point(569, 53);
+            button30.Margin = new Padding(3, 2, 3, 2);
+            button30.Name = "button30";
+            button30.Size = new Size(27, 23);
+            button30.TabIndex = 78;
+            button30.Text = "S";
+            button30.UseVisualStyleBackColor = true;
+            button30.Click += button30_Click;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Font = new Font("Microsoft Yi Baiti", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label31.Location = new Point(521, 53);
+            label31.Name = "label31";
+            label31.Size = new Size(33, 15);
+            label31.TabIndex = 79;
+            label31.Text = "Stats";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1251, 652);
+            Controls.Add(label31);
+            Controls.Add(button30);
+            Controls.Add(textBox3);
             Controls.Add(lblAlldigits);
             Controls.Add(lbldigits);
             Controls.Add(button29);
@@ -1043,5 +1078,8 @@
         private Label lblAlldigits;
         private Label lbldigits;
         private Button button29;
+        private TextBox textBox3;
+        private Button button30;
+        private Label label31;
     }
 }
