@@ -117,6 +117,7 @@
             lblWordsCounter = new Label();
             button32 = new Button();
             button33 = new Button();
+            textBox5 = new TextBox();
             SuspendLayout();
             // 
             // textBox1
@@ -127,7 +128,7 @@
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ScrollBars = ScrollBars.Both;
-            textBox1.Size = new Size(718, 408);
+            textBox1.Size = new Size(854, 408);
             textBox1.TabIndex = 0;
             textBox1.WordWrap = false;
             textBox1.TextChanged += textBox1_TextChanged;
@@ -882,10 +883,10 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(389, 112);
+            textBox3.Location = new Point(871, 95);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(355, 362);
+            textBox3.Size = new Size(355, 103);
             textBox3.TabIndex = 77;
             textBox3.Visible = false;
             // 
@@ -933,10 +934,10 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(795, 112);
+            textBox4.Location = new Point(871, 204);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(355, 362);
+            textBox4.Size = new Size(355, 98);
             textBox4.TabIndex = 82;
             textBox4.Visible = false;
             // 
@@ -972,12 +973,22 @@
             button33.UseVisualStyleBackColor = true;
             button33.Click += button33_Click;
             // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(871, 308);
+            textBox5.Multiline = true;
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(355, 110);
+            textBox5.TabIndex = 86;
+            textBox5.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1251, 652);
+            Controls.Add(textBox5);
             Controls.Add(button33);
             Controls.Add(button32);
             Controls.Add(lblWordsCounter);
@@ -1162,5 +1173,6 @@
         private Label lblWordsCounter;
         private Button button32;
         private Button button33;
+        private TextBox textBox5;
     }
 }

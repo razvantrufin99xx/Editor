@@ -1047,7 +1047,7 @@ namespace Editor
             return true;
         }
 
-        public List<string> wordslist = new List<string>();
+        public List<pairstringint> wordslist = new List<pairstringint>();
 
         //searchifwordexist
 
@@ -1055,7 +1055,7 @@ namespace Editor
         {
             for (int i = 0; i < wordslist.Count; i++)
             {
-                if (wordslist[i] == s) { return true; }
+                if (wordslist[i].c == s) { return true; }
 
             }
 
@@ -1076,7 +1076,7 @@ namespace Editor
 
                     if (findAWordInWordList(s) != true)
                     {
-                        wordslist.Add(s);
+                        wordslist.Add(new pairstringint(s, 0));
                     }
                 }
                 catch { }
@@ -1091,16 +1091,102 @@ namespace Editor
             for (int i = 0; i < wordslist.Count; i++)
             {
 
-                t.Text += wordslist[i] + "\r\n";
+                t.Text += wordslist[i].c + " : " + wordslist[i].counter.ToString() + "\r\n";
             }
 
             return true;
         }
 
         public bool clearWordList()
-        { 
+        {
             this.wordslist.Clear();
             return true;
+        }
+
+
+        public int findAWordInList(string s)
+        {
+            for (int i = 0; i < wordslist.Count; i++)
+            {
+                if (wordslist[i].c == s) { return i; }
+
+            }
+
+            return -1;
+        }
+
+
+
+        public string findAllWordsBetween2Spaces(ref System.Windows.Forms.TextBox t, int start)
+        {
+            string s = "";
+
+            try
+            {
+                s = t.Text.Substring(spacespositions[start], spacespositions[start + 1] - spacespositions[start]);
+            }
+            catch { }
+            return s;
+        }
+
+
+        public string nextWordInATextBox(ref System.Windows.Forms.TextBox t, int x)
+        {
+            string s = "";
+
+            s = findAllWordsBetween2Spaces(ref t, x);
+
+            //debug
+            string d = "DEBUG MODE IS OFF";
+
+            if (d == "DEBUG MODE IS ON")
+            {
+                this.textBox5.Text += s + " :" + x.ToString() + "\r\n";
+
+            }
+
+            //end debug
+
+            return s;
+        }
+
+
+
+
+        public bool findAllWords()
+        {
+            int x = -1;
+            int y = 0;
+
+            if (wordslist.Count <= 0) { return false; }
+            for (int i = 0; i < textBox1.Text.Length; i += y)
+            {
+                x = findAWordInList(nextWordInATextBox(ref this.textBox1, i));
+                if (x != -1)
+                {
+
+                    wordslist[x].counter++;
+                    try
+                    {
+                        y = (spacespositions[i + 1] - spacespositions[i]);
+                    }
+                    catch { }
+                }
+            }
+
+            return true;
+        }
+
+        public class pairstringint
+        {
+            public string c = "";
+            public int counter = 0;
+
+            public pairstringint(string pc, int pcount)
+            {
+                this.c = pc;
+                this.counter = pcount;
+            }
         }
 
         private void button31_Click(object sender, EventArgs e)
@@ -1110,6 +1196,7 @@ namespace Editor
 
             findPositionsOfAllSpaces();
             findAllWordsBetween2Spaces();
+            findAllWords();
             printWordList(ref this.textBox4);
             setLabellblWordsCounter();
         }
@@ -1169,7 +1256,7 @@ namespace Editor
         public bool clearTextBoxContent(ref System.Windows.Forms.TextBox t)
         {
 
-            t.Text=""; 
+            t.Text = "";
             return true;
         }
 
@@ -1405,7 +1492,7 @@ namespace Editor
             elements.Add(e);
             return true;
         }
-       
+
 
 
 
