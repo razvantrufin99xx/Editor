@@ -929,7 +929,11 @@ namespace Editor
         public string allthecharacters = "0123456789abcdefghijklmnopqrstuvxzwyABCDEFGHIJKLMNOPQRSTUVXZWY";
 
         public List<pairs> allsimbolsused = new List<pairs>();
-
+        public bool clearAllsimbolsusedlist()
+        {
+            allsimbolsused.Clear();
+            return true;
+        }
         public class pairs
         {
             public string c = "";
@@ -1005,7 +1009,7 @@ namespace Editor
 
         public bool makeStatistics()
         {
-
+            clearAllsimbolsusedlist();
             addAllSimbolsUsed();
             findAllSimbols();
             printListOfAllSimbols(ref textBox3);
@@ -1017,7 +1021,7 @@ namespace Editor
 
         private void button30_Click(object sender, EventArgs e)
         {
-            allsimbolsused.Clear();
+            
             makeStatistics();
             textBox2.Focus();
         }
@@ -1025,7 +1029,11 @@ namespace Editor
 
         //positionsofspaces
         public List<int> spacespositions = new List<int>();
-
+        public bool clearSpacePositions()
+        {
+            spacespositions.Clear();
+            return true;
+        }
         public bool findPositionsOfAllSpaces()
         {
 
@@ -1088,9 +1096,17 @@ namespace Editor
             return true;
         }
 
+        public bool clearWordList()
+        { 
+            this.wordslist.Clear();
+            return true;
+        }
 
         private void button31_Click(object sender, EventArgs e)
         {
+
+            clearWordList();
+
             findPositionsOfAllSpaces();
             findAllWordsBetween2Spaces();
             printWordList(ref this.textBox4);
@@ -1365,6 +1381,23 @@ namespace Editor
         {
             elements.Add(e);
             return true;
+        }
+        public bool changeVisibilityOfATextBox(ref System.Windows.Forms.TextBox t)
+        {
+
+            if (t.Visible == true) { t.Visible = false; return false; }
+            else { t.Visible = true; return true; }
+            return true;
+
+        }
+        private void button32_Click(object sender, EventArgs e)
+        {
+            changeVisibilityOfATextBox(ref this.textBox3);
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            changeVisibilityOfATextBox(ref this.textBox4);
         }
 
 

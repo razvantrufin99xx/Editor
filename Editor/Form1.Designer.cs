@@ -115,6 +115,8 @@
             button31 = new Button();
             textBox4 = new TextBox();
             lblWordsCounter = new Label();
+            button32 = new Button();
+            button33 = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -885,6 +887,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(355, 362);
             textBox3.TabIndex = 77;
+            textBox3.Visible = false;
             // 
             // button30
             // 
@@ -935,6 +938,7 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(355, 362);
             textBox4.TabIndex = 82;
+            textBox4.Visible = false;
             // 
             // lblWordsCounter
             // 
@@ -946,12 +950,36 @@
             lblWordsCounter.TabIndex = 83;
             lblWordsCounter.Text = "0";
             // 
+            // button32
+            // 
+            button32.Location = new Point(602, 53);
+            button32.Margin = new Padding(3, 2, 3, 2);
+            button32.Name = "button32";
+            button32.Size = new Size(27, 23);
+            button32.TabIndex = 84;
+            button32.Text = "+";
+            button32.UseVisualStyleBackColor = true;
+            button32.Click += button32_Click;
+            // 
+            // button33
+            // 
+            button33.Location = new Point(717, 53);
+            button33.Margin = new Padding(3, 2, 3, 2);
+            button33.Name = "button33";
+            button33.Size = new Size(27, 23);
+            button33.TabIndex = 85;
+            button33.Text = "+";
+            button33.UseVisualStyleBackColor = true;
+            button33.Click += button33_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1251, 652);
+            Controls.Add(button33);
+            Controls.Add(button32);
             Controls.Add(lblWordsCounter);
             Controls.Add(textBox4);
             Controls.Add(label32);
@@ -1132,5 +1160,7 @@
         private Button button31;
         private TextBox textBox4;
         private Label lblWordsCounter;
+        private Button button32;
+        private Button button33;
     }
 }
