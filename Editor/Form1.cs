@@ -1021,7 +1021,8 @@ namespace Editor
 
         private void button30_Click(object sender, EventArgs e)
         {
-            
+            clearTextBoxContent(ref this.textBox3);
+
             makeStatistics();
             textBox2.Focus();
         }
@@ -1104,7 +1105,7 @@ namespace Editor
 
         private void button31_Click(object sender, EventArgs e)
         {
-
+            clearTextBoxContent(ref this.textBox4);
             clearWordList();
 
             findPositionsOfAllSpaces();
@@ -1147,8 +1148,30 @@ namespace Editor
         }
 
 
+        public bool changeVisibilityOfATextBox(ref System.Windows.Forms.TextBox t)
+        {
 
+            if (t.Visible == true) { t.Visible = false; return false; }
+            else { t.Visible = true; return true; }
+            return true;
 
+        }
+        private void button32_Click(object sender, EventArgs e)
+        {
+            changeVisibilityOfATextBox(ref this.textBox3);
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            changeVisibilityOfATextBox(ref this.textBox4);
+        }
+
+        public bool clearTextBoxContent(ref System.Windows.Forms.TextBox t)
+        {
+
+            t.Text=""; 
+            return true;
+        }
 
         //theme
 
@@ -1382,23 +1405,7 @@ namespace Editor
             elements.Add(e);
             return true;
         }
-        public bool changeVisibilityOfATextBox(ref System.Windows.Forms.TextBox t)
-        {
-
-            if (t.Visible == true) { t.Visible = false; return false; }
-            else { t.Visible = true; return true; }
-            return true;
-
-        }
-        private void button32_Click(object sender, EventArgs e)
-        {
-            changeVisibilityOfATextBox(ref this.textBox3);
-        }
-
-        private void button33_Click(object sender, EventArgs e)
-        {
-            changeVisibilityOfATextBox(ref this.textBox4);
-        }
+       
 
 
 
