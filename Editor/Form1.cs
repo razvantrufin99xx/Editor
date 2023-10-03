@@ -1041,7 +1041,7 @@ namespace Editor
 
             for (int i = 0; i < textBox1.Text.Length; i++)
             {
-                if (textBox1.Text[i] == ' ') { spacespositions.Add(i); }
+                if (textBox1.Text[i] == ' ' ||  textBox1.Text[i] == ',' || textBox1.Text[i] == '.') { spacespositions.Add(i); }
             }
 
             return true;
