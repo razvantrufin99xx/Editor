@@ -1076,7 +1076,7 @@ namespace Editor
 
                     if (findAWordInWordList(s) != true)
                     {
-                        wordslist.Add(new pairstringint(s, 0));
+                        wordslist.Add(new pairstringint(s, 1));
                     }
                 }
                 catch { }
@@ -1193,7 +1193,7 @@ namespace Editor
         {
             clearTextBoxContent(ref this.textBox4);
             clearWordList();
-
+            clearSpacePositions();
             findPositionsOfAllSpaces();
             findAllWordsBetween2Spaces();
             findAllWords();
@@ -1201,9 +1201,7 @@ namespace Editor
             setLabellblWordsCounter();
         }
 
-        // 
-
-
+       
         public bool setLabellblWordsCounter()
         {
             this.lblWordsCounter.Text = wordslist.Count.ToString();
